@@ -7,11 +7,6 @@ import Spinner from "../spinner/Spinner";
 
 
 class RandomChar extends Component {
-  constructor(props) {
-    super(props);
-    this.updateChar();
-  }
-
   state = {
     char: {
     },
