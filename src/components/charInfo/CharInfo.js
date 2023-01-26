@@ -4,6 +4,7 @@ import MarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Skeleton from '../skeleton/Skeleton';
+import ErrorBoundary from '../errorBoundary/ErrorBoundary';
 
 import './charInfo.scss';
 
@@ -33,12 +34,14 @@ class CharInfo extends Component {
             return;
         }
 
+ 
         this.onCharLoading();
 
         this.marvelService
             .getCharacter(charId)
             .then(this.onCharLoaded)
             .catch(this.onError);
+
     }
 
     onCharLoaded = (char) => {
